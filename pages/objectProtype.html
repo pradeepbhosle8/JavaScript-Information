@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learning- Object Prototype</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/prism.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div class="container mt-2">
+        <div class=" w-25 text-center float-right bg-info rounded border p-2">
+            <a href="../index.html" class="text-white">Home</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Javascript Learning Object Prototype</h2>
+        <hr>
+        <p>A typical object inherits properties from Object.prototype. The Object.prototype object has many built-in methods and properties such as toString(), valueOf(), etc.
+            All objects see the object prototype object changes through prototype chaining unless the properties and methods subject to those changes are overridden further along the prototype chain.
+
+        </p>
+        <p>create an object is by using a function constructor.</p>
+       <pre><code class="language-javascript"> function MyDetails(name, job, yearOfBirth){    
+        this.name= name;
+        this.job= job;
+        this.yearOfBirth= yearOfBirth;
+    }
+    console.log(MyDetails.prototype) </code></pre>
+       <img src="../images/prototype.png" alt="">
+       <ul>
+           <li>hasOwnProperty(): It will return a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain.</li>
+           <li>isPrototypeOf(): It will return a boolean indicating whether the specified object is in the prototype chain of the object, this method is called upon.</li>
+           <li>propertyIsEnumerable(): It will return a boolean that indicates whether the specified property is enumerable or not.</li>
+           <li>toLocaleString(): It will return the string in the local format.</li>
+           <li>toString(): It will return the string.</li>
+           <li>valueOf() :It will return the primitive value of the specified object.</li>
+       </ul>
+       <p>JavaScript is using the prototype object in two things. First, one is to find properties and methods of an object, and the other is to implement inheritance in JavaScript. </p>
+        <pre><code class="language-javascript">
+            function Student() {
+                this.name = 'Pradeep';
+                this.gender = 'Male';
+                }
+                Student.prototype.sayHi = function(){
+                console.log("Hello World!");
+                };
+                let std = new Student();
+                std.toString();  
+                console.log(std);
+                std.sayHi();
+    </code></pre>
+    
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="../js/prism.js"></script>
+<script >
+    function MyDetails(name, job, yearOfBirth){    
+        this.name= name;
+        this.job= job;
+        this.yearOfBirth= yearOfBirth;
+    }
+    console.log(MyDetails.prototype);
+
+
+    //
+    function Student() {
+                this.name = 'Pradeep';
+                this.gender = 'Male';
+                }
+                Student.prototype.sayHi = function(){
+                console.log("Hello World!");
+                };
+                let std = new Student();
+                std.toString();
+                console.log(std);
+                std.sayHi();
+</script>
+</body>
+</html>

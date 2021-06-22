@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learning- Promise</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/prism.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div class="container mt-2">
+        <div class=" w-25 text-center float-right bg-info rounded border p-2">
+            <a href="../index.html" class="text-white">Home</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Javascript Learning Promise</h2>
+        <hr>
+        <p>Promises is a way through which we can deal with asynchronous operations in JavaScript.
+            When we make a promise, it is a guarantee that in future, we are going to do something. A promise has two possible outcomes: it will be kept when the time comes, or it will not. 
+            Similarly, in JavaScript, when we define a promise, either it will be resolved when the time comes, or it will get rejected. 
+            “the Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.”
+        </p>
+       <p>A promise has three states:</p>
+       <ul>
+           <li>pending: It is the initial state.</li>
+           <li>Fulfilled: It indicates that the promised operation was successful.</li>
+           <li>Rejected: It indicates that the promised operation was unsuccessful.</li>
+       </ul>
+      
+       <pre><code class="language-javascript">  let myPromise = new Promise(function(resolve, reject) {
+        // code here
+        });</code></pre>
+       
+        <pre><code class="language-javascript">function func1() {
+            return new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    const error = true;
+                    if (!error) {
+                        console.log('Function: Your promise has been resolved')
+                        resolve();
+                    }
+                    else {
+                        console.log('Function: Your promise has not been resolved')
+                        reject('Sorry not fulfilled');
+                    }
+                }, 2000);
+            })
+        }
+        
+        func1().then(function(){
+            console.log("Pradeep: Thanks for resolving")
+        }).catch(function(error){
+            console.log("Pradeep: Very bad bro. Reason: " + error)
+        })</code></pre>
+        <p>Example</p>
+        <ul id="students"></ul>
+        <pre><code class="language-javascript">   const students = [
+            { name: "Pradeep", subject: "JavaScript" },
+            { name: "Ashwat", subject: "Machine Learning" }
+        ]
+        
+        
+        function enrollStudent(student) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    students.push(student);
+                    console.log("Student has been enrolled");
+                    const error = false;
+                    if (!error) {
+                        resolve();
+                    }
+                    else {
+                        reject();
+                    }
+                }, 1000);
+            })
+        }
+        
+        function getStudents() {
+            setTimeout(function () {
+                let str = "";
+                students.forEach(function (student) {
+                    str += `&#x3C;li&#x3E; ${student.name}&#x3C;/li&#x3E;`
+                });
+                document.getElementById('students').innerHTML = str;
+                console.log("Students have been fetched");
+            }, 5000);
+        }
+        
+        let newStudent = { name: "Kevu", subject: "Python" }
+        enrollStudent(newStudent).then(getStudents).catch(function () {
+            console.log("Some error occured");
+        }); </code></pre>
+    
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="../js/prism.js"></script>
+<script >
+    const students = [
+            { name: "Pradeep", subject: "JavaScript" },
+            { name: "Ashwat", subject: "Machine Learning" }
+        ]
+        
+        
+        function enrollStudent(student) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    students.push(student);
+                    console.log("Student has been enrolled");
+                    const error = false;
+                    if (!error) {
+                        resolve();
+                    }
+                    else {
+                        reject();
+                    }
+                }, 1000);
+            })
+        }
+        
+        function getStudents() {
+            setTimeout(function () {
+                let str = "";
+                students.forEach(function (student) {
+                    str += `<li> ${student.name}</li>`
+                });
+                document.getElementById('students').innerHTML = str;
+                console.log("Students have been fetched");
+            }, 5000);
+        }
+        
+        let newStudent = { name: "Kevu", subject: "Python" }
+        enrollStudent(newStudent).then(getStudents).catch(function () {
+            console.log("Some error occured");
+        });
+</script>
+</body>
+</html>

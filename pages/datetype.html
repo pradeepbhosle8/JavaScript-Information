@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learning- Date Type</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/prism.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div class="container mt-2">
+        <div class=" w-25 text-center float-right bg-info rounded border p-2">
+            <a href="../index.html" class="text-white">Home</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Javascript Learning Date Type</h2>
+        <hr>
+        <p>JavaScript provides different data types to hold different types of values. There are two types of data types in JavaScript.</p>
+       
+        <ol>
+            <li>Primitive data type</li>
+            <li>Refrence data type (Non Primitive)</li>
+        </ol>
+        <p class="font-weight-bold">1. Primitive data type</p>
+        <ul>
+            <li>String</li>
+            <li>Number</li>
+            <li>Boolean</li>
+            <li>Null</li>
+            <li>Undefined</li>
+            <li>Symbol</li>
+        </ul>
+        <pre><code class="language-javascript">
+        // Primitive data type
+            //String
+        let myName = 'Pradeep';
+        console.log( 'My String is '+ myName);
+        console.log( 'My DataType is '+ (typeOf myName));
+        // Output: My String is Pradeep
+        // Output: My DataType is string
+
+            // Numbers
+        let marks = 45;
+        console.log( 'My marks is '+ marks);
+        console.log( 'My DataType is '+ (typeof marks));
+        // Output: My marks is 45
+        // Output: My DataType is Number
+
+            // Boolean
+        let isDriver = true;
+        console.log('DataType is ' + (typeof isDriver));
+        // Output: My DataType is Boolean
+
+            // Null
+        let nulVar = null;
+        console.log('DataType is ' + (typeof nulVar));
+        // Output: My DataType is Object but it's primitive data type 
+
+            // Undefined
+        let unDef = undefined;
+        console.log('DataType is ' + (typeof unDef));
+        // Output: My DataType is Undefined
+        </code></pre>
+        <p class="font-weight-bold">2. Refrence data type</p>
+        <ul>
+            <li>Array</li>
+            <li>Object Literal</li>
+            <li>Function</li>
+            <li>Dates</li>
+        </ul>
+        <pre><code class="language-javascript">
+        // Refrence data type
+            // Arrays
+            myarr = [1, 2, 3, 4];
+            console.log('DataType is ' + (typeof myarr));
+
+            // Object Literals
+            let stMarks{
+                pradeep:52,
+                Kevu:65,
+                Ashwat: 63
+            } 
+            console.log(stMarks) 
+            console.log( 'My DataType is '+ (typeof stMarks)); 
+            
+            // Function 
+            function test(){
+
+            }
+            console.log(typeof test)
+
+            // date
+            let date = new Date();
+            console.log(typeof date)
+    </code></pre>
+    
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="../js/prism.js"></script>
+<script src="../js/datatype.js"></script>
+</body>
+</html>

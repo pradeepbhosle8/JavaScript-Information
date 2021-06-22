@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learning- Obejct, Constructor and Object Oriented  </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/prism.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+
+</head>
+<body>
+    <div class="container mt-2">
+        <div class=" w-25 text-center float-right bg-info rounded border p-2">
+            <a href="../index.html" class="text-white">Home</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Javascript Learning Obejct, Constructor and Object Oriented  </h2>
+        <hr>
+        <p>understand First what is Object-oriented programming (OOP): The basic idea of object-oriented programming is that objects are used to model real world things that we want to represent inside our programs.
+             </p>
+        <p>What are objects?</p>
+        <p>Objects can contain related code and data, representing information about the thing we are trying to model, and functionality that we want it to have. 
+            Object data is stored neatly inside an object package, making it easy to structure and access. objects created using object literal are <b>singletons</b>. This means when we made a change in an object, it affects the object entire the script.
+             Whereas if an object is created using the constructor function, then the change will not affect the object throughout the script.</p>
+        <pre><code class="language-javascript">// constructor function
+function Person(){};
+
+// literal notation
+const Person = {};</code></pre>
+        <p>Objects created using object literal</p>
+        <p>Since these are singletons, a change to an object affects the object's entire script. 
+            A change in one instance will affect all the instances of the object. Object literal is a comma-separated list of name-value pairs inside the curly braces. The object literals encapsulate the data. 
+            This minimizes the use of global variables, which can cause problems when combining the code.</p>
+        <pre><code class="language-javascript">const Person = {
+        firstName = 'Pradeep',
+        lastName = 'Bhosle',
+        gender: 'Male',
+        }</code></pre>
+
+    <p>Objects created using the constructor function</p>    
+    <pre><code class="language-javascript"> function person(firstName, lastName, gender){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gende = gender;
+    }
+        // creating object 'new' Keywords
+        let pradeep = new person('Pradeep', 'Bhosle', 'Male') ;
+        let Neha = new person('Neha', 'Bhosle', 'Female');
+        console.log(pradeep, Neha);
+   </code></pre>
+
+   <h6>Constructor Person demo Contact list</p>
+<div class="container">
+    
+    <div class="row" id="personInnfoList">
+        <!-- <div class="col-sm-12 mb-5">
+            <div class="col-sm-6 float-right">
+                <input type="search" name="" id="searchText" class="form-control" placeholder="Search" autocomplete="off">
+            </div>
+            
+        </div> -->
+        <div class="col-sm-4 mb-3">
+            <div class="card">
+                <div class="card-body p-2 border rounded">
+                    <div class="media-main">
+                        <a class="float-left mr-5 " href= "#">
+                           <i class="fas fa-user-secret" style="font-size: 60px;color: #826d08;"></i>
+                        </a>
+                     
+                        <div class="info ">
+                            <h4>Jonathan Smith</h4>
+                            <p class="text-muted">Graphics Designer</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr>
+                    <ul class="social-links list-inline text-left m-3 p-b-10">
+                        <li class="mb-3">
+                            <i class="fas fa-mobile-alt text-info"></i> : <span class="ml-3">+91 9999999999</span>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope-square text-info"></i> : <span class="ml-3">person@gmail.com</span>
+                        </li>
+                        <!-- <li class="mb-3">
+                            <i class="fab fa-linkedin text-info"></i>  : <span class="ml-3">linkedinperson.com</span>
+                        </li> -->
+                      
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+       
+
+       
+    </div>
+</div>
+    
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="../js/prism.js"></script>
+<script >
+    console.log('======= constructor function =====');
+    function person(firstName, lastName, gender){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gende = gender;
+    }
+     // creating object 'new' Keywords
+     let pradeep = new person('Pradeep', 'Bhosle', 'Male') ;
+        let Neha = new person('Neha', 'Bhosle', 'Female');
+  
+
+    //  constact list 
+    // constructor function
+    function contactListPersons(firstName, lastName, profile, contactNumber, email ) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.profile = profile;
+        this.contactNumber = contactNumber;
+        this.email = email;
+    }
+
+    let infoList = document.getElementById('personInnfoList');
+    // console.log(infoList);
+    
+    // create New Person
+    let pradeepBh = new contactListPersons('Pradeep', 'Bhosle', 'Front end Devloper', '9999999999', 'pradeep@gmail.com');
+    console.log(pradeepBh.firstName);
+    let html = `
+    <div class="col-sm-4 mb-3">
+    <div class="card">
+    <div class="card-body p-2 border rounded">
+                    <div class="media-main">
+                        <a class="float-left mr-5 " href= "#">
+                           <i class="fas fa-user-secret" style="font-size: 60px;color: #826d08;"></i>
+                        </a>
+                     
+                        <div class="info ">
+                            <h4>${pradeepBh.firstName +' '+ pradeepBh.lastName}</h4>
+                            <p class="text-muted">${pradeepBh.profile}</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr>
+                    <ul class="social-links list-inline text-left m-3 p-b-10">
+                        <li class="mb-3">
+                            <i class="fas fa-mobile-alt text-info"></i> : <span class="ml-3">+91 ${pradeepBh.contactNumber}</span>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope-square text-info"></i> : <span class="ml-3">${pradeepBh.email}</span>
+                        </li>
+                       
+                      
+                      
+                    </ul>
+                </div>
+                </div>
+                </div>
+    
+    `;
+    infoList.innerHTML = html;
+
+
+
+
+       
+</script>
+</body>
+</html>

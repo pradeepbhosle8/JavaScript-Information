@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learning- Strings_Properties Method and Template Literals</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/prism.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div class="container mt-2">
+        <div class=" w-25 text-center float-right bg-info rounded border p-2">
+            <a href="../index.html" class="text-white">Home</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Javascript Learning Strings_Properties Method and Template Literals</h2>
+        <hr>
+        <p>Strings are useful for holding data that can be represented in text form. You are use single quotes (' ') or double quotes (" ") to wrap a string literal. In Es6 you create a template literal by wrapping your text in <b>backticks</b></p>
+       
+        <pre><code class="language-javascript">let simple = `This is your text `;
+            // eg. 01
+            let firstName ='Pradeep', lastName= 'Bhosle';
+            let fullName = `Hi your firstname is ${firstName} and last name is ${lastName}`;
+            console.log(fullName);
+            // Output: Hi your firstname is Pradeep and last name is Bhosle
+
+        </code></pre>
+        <p>Javascript String Method</p>
+        <p>1. <b>charAt(2)</b>: Its return the character at the "2" position with in the string. </p>
+        <pre><code class="language-javascript">let myName = "Pradeep Bhosle"; // 0P 1r 2a
+        console.log(myName.chrAt(2));
+        // Output:  a </code></pre>
+
+        <p>2. <b>concat(a1,a2)</b>: Combines one or more string and return the concanate string. </p>
+        <pre><code class="language-javascript">let a1 = "Pradeep Bhosle"; 
+            let a2 = " Is Working on Javascript.";
+            let c = a1.concat(a2);
+            console.log();
+            // Output: VM1780:4 Pradeep Bhosle Is Working on Javascript. </code></pre>
+
+        <p>2. <b>indexOf(substr, [start_from])</b>:eturns the index number of the searched character within the string.  If not found, it will return -1  </p>
+        <pre><code class="language-javascript">let text1 = "Hi, this is first para";
+            let text2 = text1.indexOf("is");
+            console.log(text2);
+            // Output: 6;
+            let text1 = "Hi, this is first para";
+            let text2 = text1.indexOf("of"); // of is not present on string.
+            console.log(text2);
+            // Output: -1;
+         </code></pre>   
+         
+         <p>3. <b>lastindexOf(substr, [start_from])</b>:returns the index number of the searched character within the string. This method will return the index of the last occurrence of a specified text in a string  </p>
+        <pre><code class="language-javascript">let myPrintvalue = 'javascript Node.js';
+            console.log(myString.lastIndexOf('N'));
+            //output: 11
+         </code></pre> 
+         
+         <p>4. <b>slice(substr, [end])</b>:This method returns a substring of the string based on the "start" and "end" index , it will not include the "end" index itself. "End" argument is optional, and if none is specified, the slice includes all characters from "start" to end of string. </p>
+         <pre><code class="language-javascript">let text="programming"
+            var mystr= text.slice(0,4)
+            console.log(mystr)
+            //Output:- "prog"
+
+            // toLowerCase()
+            String.toLowerCase();
+
+            //toUpperCase()
+            String.toUpperCase();
+          </code></pre> 
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="../js/prism.js"></script>
+<script src="../js/datatype.js"></script>
+</body>
+</html>

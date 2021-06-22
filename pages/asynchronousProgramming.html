@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learning- Asynchronous Programming</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/prism.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div class="container mt-2">
+        <div class=" w-25 text-center float-right bg-info rounded border p-2">
+            <a href="../index.html" class="text-white">Home</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Javascript Learning Asynchronous Programming</h2>
+        <hr>
+        <p>As we know that the JavaScript is single-threaded and can only handle one operation at a time. As there is a single execution thread for our program to run, a question arises that how to execute a long-running operation without blocking the thread of execution?</p>
+        <p>synchronous and asynchronous programming?</p>
+        <p>In synchronous programming, one thing happens at a time. </p>
+        <p> When we call a function that performs a long-running action, it returns a result when the action has finished. This stops the program for the time the action takes. In contrast, asynchronous programming allows multiple things to happen at the same time. When we start an action, the program continues to run. When the action finishes, the program is informed and gets the result.</p>
+        <p>In synchronous programming, where the request function returns only after it has done its work. To perform this task, we make the requests one after the other. Here the drawback is that the second request will be started only when the first has finished. Suppose the time taken by the first request is 12 seconds, and the time taken by the second request is 13 seconds, so the total time taken will be the sum of the two response times.</p>
+        <p>In asynchronous programming, the functions that perform a slow action takes an extra argument, a callback function. The action is started, and when it finishes, the callback function is called with the result.</p>
+        <pre><code class="language-javascript">setTimeout(() => console.log("Tick"), 500);</code></pre>
+        <p>3 type Asynchronous Programming</p>
+       <ul>
+           <li>Asynch/await</li>
+           <li>Callbacks</li>
+           <li>promise</li>
+       </ul>
+    
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="../js/prism.js"></script>
+<script src="../js/datatype.js"></script>
+</body>
+</html>

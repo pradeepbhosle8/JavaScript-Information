@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learning- Array and Objects</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/prism.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div class="container mt-2">
+        <div class=" w-25 text-center float-right bg-info rounded border p-2">
+            <a href="../index.html" class="text-white">Home</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Javascript Learning Array and Objects</h2>
+        <hr>
+        <p>If you ever worked with a JSON structure, you've worked with JavaScript objects. Quite literally. JSON stands for JavaScript Object Notation.</p>
+       
+       
+        <p class="font-weight-bold">object is as simple </p>
+       
+        <pre><code class="language-javascript">       {
+        "color": "purple",
+        "type" : "minicar",
+        "capacity": 5    
+        }</code></pre>
+        <p class="font-weight-bold">This object represents a car. There can be many types and colors of cars, each object then represents a specific car.</p>
+       <div class="text-center"> <i class="fas fa-car-side display-4 c-purple"></i></div>
+        <h3>Creating an array of Objects</h3>
+        <div class="text-center mt-3"> 
+            <ul class="carsList">
+                <li> <i class="fas fa-car-side display-4 c-purple"></i> </li>
+                <li> <i class="fas fa-car  display-4 text-primary"></i></li>
+                <li> <i class="fas fa-caravan  display-4 text-warning"></i></li>
+                <li> <i class=" fas fa-truck-pickup  display-4 text-danger"></i></li>
+                <li> <i class=" fas fa-truck-moving  display-4 text-info"></i></li>
+                <li> <i class="  fas fa-truck  display-4 text-success"></i></li>
+            </ul>
+           
+        </div>
+        <p>represent it as an array this way</p>
+        <pre><code class="language-javascript">
+       let cars = [ {
+        "color": "purple",
+        "type": "minivan",
+        "capacity": 5
+      },
+      {
+        "color": "blue",
+        "type": "wagon",
+        "capacity": 4
+      },
+      {
+        ...
+      },
+      ...
+    ]
+    </code></pre>
+    <h3 class="my-4">Add a new object at the start - Array.unshift</h3>
+    <div class="text-center mt-3"> 
+        <ul class="carsList">
+            <li> <i class="fas fa-car-side display-4 c-purple"></i> </li>
+            <li> <i class="fas fa-car  display-4 text-primary"></i></li>
+            <li> <i class="fas fa-caravan  display-4 text-warning"></i></li>
+            <li> <i class=" fas fa-truck-pickup  display-4 text-danger"></i></li>
+            <li> <i class=" fas fa-truck-moving  display-4 text-info"></i></li>
+            <li> <i class="  fas fa-truck  display-4 text-success"></i></li>
+        </ul>
+        <i class="fas fa-car-side display-4 text-danger"></i>
+    </div>
+    <p>To add an object at the first position, use Array.unshift.</p>
+    <pre><code class="language-javascript">
+       let cars = ['car1', 'car2', 'car3', 'car4', 'car5'];
+       console.log(car);
+       car.unshift('red car');
+       console.log(car); // Output: ["red car", "car1", "car2", "car3", "car4", "car5"]
+     </code></pre>
+
+     <h3 class="my-4">Add a new object at the end - Array.push</h3>
+     <p>To add an object at the last position, use Array.push.</p>
+     <pre><code class="language-javascript">
+        let cars = ['car1', 'car2', 'car3', 'car4', 'car5'];
+        console.log(car);
+        car.push('red car');
+        console.log(car); // Output: ["car1", "car2", "car3", "car4", "car5", "red car"]
+      </code></pre>
+
+      <h3 class="my-4">Add a new object in the middle - Array.splice</h3>
+     <p>To add an object in the middle, use Array.splice. This function is very handy as it can also remove items.</p>
+     <pre><code class="language-javascript">
+        let cars = ['car1', 'car2', 'car3', 'car4', 'car5'];
+        console.log(car);
+        car.splice(1, 3);  // splice (start number , delete count number);
+        console.log(car); // Output: ["car1", "car5"]
+      </code></pre>
+
+      <h3 class="my-4">Remove object in to end - Array.pop</h3>
+     <p>To remove an object in the end, use Array.pop. </p>
+     <pre><code class="language-javascript">
+        let cars = ['car1', 'car2', 'car3', 'car4', 'car5'];
+        console.log(car);
+        car.pop();  // 
+        console.log(car); // Output: ["car1", "car2", "car3", "car4"]
+      </code></pre>
+
+      <h3 class="my-4">Remove object in to Start - Array.shift</h3>
+     <p>To remove an object in the Start, use Array.shift. </p>
+     <pre><code class="language-javascript">
+        let cars = ['car1', 'car2', 'car3', 'car4', 'car5'];
+        console.log(car);
+        car.shift();  // 
+        console.log(car); // Output: ["car2", "car3", "car4", "car5"]
+      </code></pre>
+
+      <h3 class="my-4">Reverse Of an objects - Array.reverse</h3>
+      <p>To reverse of an object, use Array.reverse. </p>
+      <pre><code class="language-javascript">
+         let cars = ['car1', 'car2', 'car3', 'car4', 'car5'];
+         console.log(car);
+         car.reverse();  // 
+         console.log(car); // Output: ["car5", "car4", "car3", "car2", "car1"]
+       </code></pre>
+
+       <h3 class="my-4">Find an object in an array by its values - Array.find</h3>
+      <p>Let's say we want to find a car that is red. We can use the function Array.find</p>
+      <pre><code class="language-javascript">
+        let car = [ {
+          "color": "red",
+          "type": "minivan",
+          "capacity": 5
+        },
+        {
+          "color": "blue",
+          "type": "wagon",
+          "capacity": 4
+        },
+        {
+          "color": "purple",
+          "type": "wagon",
+          "capacity": 4
+        },
+        {
+          "color": "red",
+          "type": "wagon",
+          "capacity": 4
+        }
+      ];
+      
+      console.log(car.find(cars => cars.color === 'red'));
+
+        // Output: {color: "red", type: "minivan", capacity: 5}
+       </code></pre>
+
+       <h3 class="my-4">Get multiple items from an array that match a condition - Array.filter</h3>
+      <p>The Array.find function returns only one object. If we want to get all red cars, we need to use Array.filter.</p>
+      <pre><code class="language-javascript">
+        let abc = [ {
+          "color": "red",
+          "type": "minivan",
+          "capacity": 5
+        },
+        {
+          "color": "blue",
+          "type": "wagon",
+          "capacity": 4
+        },
+        {
+          "color": "purple",
+          "type": "wagon",
+          "capacity": 4
+        },
+        {
+          "color": "red",
+          "type": "wagon",
+          "capacity": 4
+        }
+      ];
+      
+      console.log(car.find(cars => cars.color === 'red'));
+
+        // Output: 0: {color: "red", type: "minivan", capacity: 5}
+                   1: {color: "red", type: "wagon", capacity: 4}
+       </code></pre>
+
+       <h3 class="my-4">Transform objects of an array - Array.map</h3>
+      <p>The Array.find function returns only one object. If we want to get all red cars, we need to use Array.filter.</p>
+      <pre><code class="language-javascript">
+        let mapCar = [
+    {
+        "color": "red",
+        "type": "minivan",
+        "capacity": 2
+      },
+      {
+        "color": "blue",
+        "type": "wagon",
+        "capacity": 3
+      },
+      {
+        "color": "purple",
+        "type": "wagon",
+        "capacity": 4
+      },
+      {
+        "color": "red",
+        "type": "wagon",
+        "capacity": 6
+      },
+      {
+        "color": "red",
+        "type": "wagon",
+        "capacity": 7
+      }
+
+      
+];
+
+let size = mapCar.map( mycar => {
+    if(mycar.capacity <= 3){
+        return 'Small Car';
+    } if(mycar.capacity <= 5){
+        return 'Medium Car';
+    }else {
+        return 'Large Car';
+    }
+})
+
+console.log(size);
+
+        // Output: ["Small Car", "Small Car", "Medium Car", "Large Car", "Large Car"]
+       </code></pre>
+
+       <h3 class="my-4">Add a property to every object of an array - Array.forEach</h3>
+       <!-- <p>The Array.find function returns only one object. If we want to get all red cars, we need to use Array.filter.</p> -->
+       <pre><code class="language-javascript">
+        let foreachCar = [
+    {
+        "color": "red",
+        "type": "minivan",
+        "capacity": 2
+      },
+      {
+        "color": "blue",
+        "type": "wagon",
+        "capacity": 3
+      },
+      {
+        "color": "purple",
+        "type": "wagon",
+        "capacity": 4
+      },
+      {
+        "color": "red",
+        "type": "wagon",
+        "capacity": 6
+      },
+      {
+        "color": "red",
+        "type": "wagon",
+        "capacity": 7
+      }
+
+      
+];
+
+foreachCar.forEach( (value) => {
+    console.log(value);
+})
+         /* Output:{color: "red", type: "minivan", capacity: 2}
+        {color: "blue", type: "wagon", capacity: 3}
+        {color: "purple", type: "wagon", capacity: 4}
+        {color: "red", type: "wagon", capacity: 6}
+        {color: "red", type: "wagon", capacity: 7} */
+        </code></pre>
+
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="../js/prism.js"></script>
+<script src="../js/array&objects.js"></script>
+</body>
+</html>

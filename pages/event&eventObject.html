@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learning- Event and Event Object</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/prism.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div class="container mt-2">
+        <div class=" w-25 text-center float-right bg-info rounded border p-2">
+            <a href="../index.html" class="text-white">Home</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Javascript Learning Event and Event Object</h2>
+        <hr>
+        <p>webpage like clicking a button or submit the form. Each available event has an event handler, which is a block of code that runs when the event occurred. Event handlers are sometimes called event listeners. </p>
+        <p>HTML-attribute</p>
+        <pre><code class="language-html">&#x3C;input value=&#x22;Click here&#x22; onclick=&#x22;alert(&#x27;Click here!&#x27;)&#x22; type=&#x22;button&#x22;&#x3E;</code></pre>
+       <p>The code inside onclick runs on mouse click.</p>
+       <p><b>addEventListener()</b> : JavaScript addEventListener() method allows the programmer to set up functions to be called when a specified event happens, such as when a user clicks a button. The purpose of using the addEventListener() method is to attach an event handler to the specified element. While using the addEventListener() method, remember that it attaches an event handler to an element without overwriting existing event handlers.</p>
+        <pre><code class="language-javascript">element.addEventListener(event, function, useCapture);
+            // Example:-
+            document.addEventListener("click", myfunc);
+            function myfunc () {
+            document.getElementById("demo").innerHTML = "Hello World";
+            }
+            // 
+            document.addEventListener("click", myfunc);
+            function myfunc(event) {
+            alert(event.type + " at " + event.currentTarget);
+            alert("Coordinates: " + event.clientX + ":" + event.clientY);};
+
+            // Dblclick
+            const myclick = document.querySelector('aside');
+            myclick.addEventListener('dblclick', function (e) {
+            console.log(“Double click event occur”);});
+
+            // Mousemove
+            const test= document.getElementById('test');
+            test.addEventListener('mousemove', function (e) {
+            console.log(“ Mousemove event occur”);});
+
+            // Mouseover and mouseout
+            const test= document.getElementById('test');
+            test.addEventListener("mouseover", function( event ) { event.target.style.color = "red";});
+            //
+            const test= document.getElementById('test');
+            test.addEventListener("mouseout", function( event ) {   
+            event.target.style.color = "red";});
+
+            //Mouseenter and mouseleave
+            const mouseTarget = document.getElementById('mouseTarget');
+            mouseTarget.addEventListener('mouseenter', function(e) {
+            mouseTarget.style.border = '5px dotted blue';});
+            //
+            const mouseTarget = document.getElementById('mouseTarget');
+            mouseTarget.addEventListener('mouseleave', function(e){
+            mouseTarget.style.border = '1px solid red'; });
+            
+            //Mousedown and mouseup
+            myevent.addEventListener('mousedown', function(e) {
+            console.log("Mousedown event occur")});
+            //
+            myevent.addEventListener('mouseup', function(e) {
+            console.log("Mouseup event occur")});
+        </code></pre>
+        <p> <b>type:</b> This will tell the event type, here it is "click".</p>
+            <p><b>currentTarget:</b> It returns the element whose event listeners triggered the event.</p>
+            <p><b>clientX / event.clientY: </b>It returns the window-relative coordinates of the cursor, for pointer events.</p>
+        <p>
+            The first parameter is the type of event like "click" or "mousedown". 
+The second parameter is the function we want to call when the event occurs.
+The third parameter is optional. It is a boolean value specifying whether to use event bubbling or event capturing. 
+        </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="../js/prism.js"></script>
+<script src="../js/datatype.js"></script>
+</body>
+</html>

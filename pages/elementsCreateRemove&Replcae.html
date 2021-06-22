@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learning-  Creating, Removing & Replacing Elements</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/prism.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div class="container mt-2">
+        <div class=" w-25 text-center float-right bg-info rounded border p-2">
+            <a href="../index.html" class="text-white">Home</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Javascript Learning  Creating, Removing & Replacing Elements</h2>
+        <hr>
+        <p>how to create new elements and manipulate existing elements on the page, such as removing elements from the page, replacing elements with new elements.</p>
+       <p><b>createElement() :  document.createElement() is a method used to create the HTML element. createElement().</b></p>
+        <pre><code class="language-javascript">let element= document.createElement("name");</code></pre>
+       <p>In the above syntax, the name is passed as a parameter. The name specifies the type of the created element. The document.createElement() returns the newly created element.</p>
+
+        <pre><code class="language-javascript">let div = document.createElement('div');
+let paragraph = document.createElement("P");                
+let text = document.createTextNode("This is a paragraph.");
+// check Console
+    let createPara = document.createElement('p');
+    let createText = document.createTextNode('This is paragraph');
+    createPara.appendChild(createText);
+    let createDiv = document.createElement('div');
+    createDiv.id ='test';
+    createDiv.className ='text-info';
+    createDiv.appendChild(createPara);
+    let MainDIv = document.getElementById('createElements');
+    MainDIv.appendChild(createDiv);
+        </code></pre>
+        
+        <div id="createElements"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="../js/prism.js"></script>
+<script >
+  
+    let createPara = document.createElement('p');
+    let createText = document.createTextNode('This is paragraph');
+    createPara.appendChild(createText);
+    let createDiv = document.createElement('div');
+    createDiv.id ='test';
+    createDiv.className ='text-info';
+    createDiv.appendChild(createPara);
+    let MainDIv = document.getElementById('createElements');
+    MainDIv.appendChild(createDiv);
+</script>
+</body>
+</html>

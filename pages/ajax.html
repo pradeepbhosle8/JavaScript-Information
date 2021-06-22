@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learning- Ajax</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/prism.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div class="container mt-2">
+        <div class=" w-25 text-center float-right bg-info rounded border p-2">
+            <a href="../index.html" class="text-white">Home</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Javascript Learning Ajax</h2>
+        <hr>
+        <p>AJAX is a technique for creating faster, and more interactive web applications with the help of XML, HTML, CSS, and JavaScript. It is a web browser technology which is independent of web server software.</p>
+        <p>AJAX use of the built-in browser XMLHttpRequest (XHR) objects to send and receive information to and from a web server asynchronously, in the background, without blocking the page or interfering with the user's experience.</p>
+        <ul>
+            <li>AJAX = Asynchronous JavaScript And XML.</li>
+
+            <li>Update a web page without reloading the page</li>
+            <li>Request data from a server - after the page has loaded</li>
+            <li>Receive data from a server - after the page has loaded</li>
+            <li>Send data to a server - in the background</li>
+        </ul>
+        <p>XMLHttpRequest Object: The XMLHttpRequest object can be used to exchange data with a server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.</p>
+
+        <pre><code class="language-javascript"> let xhttp = new XMLHttpRequest();</code></pre>
+        <p>Old versions of Internet Explorer (IE5 and IE6)</p>
+        <pre><code class="language-javascript"> variable = new ActiveXObject("Microsoft.XMLHTTP");
+            if (window.XMLHttpRequest) {
+                // code for modern browsers
+                xmlhttp = new XMLHttpRequest();
+             } else {
+                // code for old IE browsers
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        </code></pre>
+        <p>Send a Request To a Server: To send a request to a server, we use the open() and send() methods of the XMLHttpRequest object:</p>
+        <pre><code class="language-javascript">     xhttp.open("GET", "ajax_info.txt", true);
+            xhttp.send();
+            // post
+            xhttp.open("POST", "ajax_info.txt", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send()
+        </code></pre>
+        <p>setRequestHeader : setRequestHeader(header, value) Adds HTTP headers to the request. header: specifies the header name
+            value: specifies the header value</p>
+        <pre><code class="language-javascript"> xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.getResponseHeader('Content-type', 'application/json');
+        </code></pre>    
+        <p>onreadystatechange Property: With the XMLHttpRequest object you can define a function to be executed when the request receives an answer.
+
+            The function is defined in the onreadystatechange property of the XMLHttpResponse object:</p>
+            <pre><code class="language-javascript"> xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("demo").innerHTML = this.responseText;
+                }
+              };
+              xhttp.open("GET", "ajax_info.txt", true);
+              xhttp.send();</code></pre>
+
+              <table class="table table-bordered table-striped">
+                 
+                  <tbody>
+                      <tr>
+                          <td>new XMLHttpRequest()</td>
+                          <td>Creates a new XMLHttpRequest object</td>
+                      </tr>
+                      <tr>
+                        <td>abort()</td>
+                        <td>Cancels the current request</td>
+                    </tr>
+                    <tr>
+                        <td>getAllResponseHeaders()</td>
+                        <td>Returns header information</td>
+                    </tr>
+                    <tr>
+                        <td>getResponseHeader()</td>
+                        <td>Returns specific header information</td>
+                    </tr>
+                    <tr>
+                        <td>open(method,url,async,user,psw)</td>
+                        <td>Specifies the request
+
+                            method: the request type GET or POST
+                            url: the file location
+                            async: true (asynchronous) or false (synchronous)
+                            user: optional user name
+                            psw: optional password</td>
+                    </tr>
+                    <tr>
+                        <td>send()</td>
+                        <td>Sends the request to the server
+                            Used for GET requests</td>
+                    </tr>
+                    <tr>
+                        <td>send(string)</td>
+                        <td>Sends the request to the server.
+                            Used for POST requests</td>
+                    </tr>
+                    <tr>
+                        <td>setRequestHeader()</td>
+                        <td>Adds a label/value pair to the header to be sent</td>
+                    </tr>
+                    <tr>
+                        <td>onreadystatechange</td>
+                        <td>Defines a function to be called when the readyState property changes</td>
+                    </tr>
+                    <tr>
+                        <td>readyState</td>
+                        <td>Holds the status of the XMLHttpRequest
+                            <ul class="list-inline">
+                                <li>0: request not initialized</li>
+                                <li>1: server connection established</li>
+                                <li>2: request received</li>
+                                <li>3: processing request</li>
+                                <li>4: request finished and response is ready</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>responseText</td>
+                        <td>Returns the response data as a string
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>responseXML</td>
+                        <td>Returns the response data as XML data</td>
+                    </tr>
+                    <tr>
+                        <td>status</td>
+                        <td>Returns the status-number of a request
+                            <ul class="list-inline">
+                                <li>200: "OK"</li>
+                                <li>403: "Forbidden"</li>
+                                <li>404: "Not Found"</li>
+                              
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>statusText</td>
+                        <td>Returns the status-text (e.g. "OK" or "Not Found")</td>
+                    </tr>
+                  </tbody>
+              </table>
+    
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="../js/prism.js"></script>
+<script >
+   fetch("../json/db.json")
+.then(response => {
+   return response.json();
+})
+.then(data => console.log(data));
+</script>
+</body>
+</html>

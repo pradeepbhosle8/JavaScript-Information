@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learning- Children, Parent & Traversing the DOM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/prism.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div class="container mt-2">
+        <div class=" w-25 text-center float-right bg-info rounded border p-2">
+            <a href="../index.html" class="text-white">Home</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Javascript Learning Children, Parent & Traversing the DOM</h2>
+        <hr>
+        <pre><code class="language-html">  &#x3C;div class=&#x22;container&#x22;&#x3E;  //is a parent
+    &#x3C;div class=&#x22;myclass1&#x22;&#x3E;&#x3C;/div&#x3E; //is a Child or a sibling to below class
+    &#x3C;div class=&#x22;myClass2&#x22;&#x3E;&#x3C;/div&#x3E; //is a Child
+  &#x3C;/div&#x3E;</code></pre>
+
+    <p>Eg. Parent children subling DOM</p>
+    <div class="container parChil">
+        <h1 id="heading"> Welcome Header</h1>
+        <div id="myfirst" class="child red good" id="first">child 1
+
+            <ul class="this">
+                <li class="childul">this</li>
+                <li class="childul">is</li>
+                <li class="childul">a</li>
+                <li class="childul">list </li>
+                <li class="childul">of my dreams</li>
+            </ul>
+        </div>
+        <div class="child">child 2</div>
+        <div class="child red">child 3</div>
+        <div class="child">child 4</div>
+        <form action="none.html" method="post">
+            <a href="#">Go to Code With Pradeep</a>
+            <br>
+            <br>
+            Search this website: <input type="text" class="" name="Hello" id="searchInput">
+            <input type="button" value="submit">
+        </form>
+    </div>
+    <br>
+    <div class="no">this is a dummy div1</div>
+    <div class="no">this is a dummy div2</div>
+    <div class="no">this is a dummy div3</div>
+        
+        <p><b>querySelector </b></p>
+        <pre><code class="language-html">&#x3C;div class=&#x22;component&#x22;&#x3E;
+    &#x3C;h2 class=&#x22;component_title&#x22;&#x3E;Component title&#x3C;/h2&#x3E;
+&#x3C;/div&#x3E; </code></pre>
+       <pre><code class="language-javascript">let component = document.querySelector('.component');
+let title = component.querySelector('.component_title');
+console.log(title);
+// Output: &#x3C;h2 class=&#x22;component_title&#x22;&#x3E; ... &#x3C;/h2&#x3E; </code></pre>
+
+    <p><b>children</b></p>
+    <ul class="list">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+      </ul>
+
+    <pre><code class="language-html">&#x3C;ul class=&#x22;list&#x22;&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Link 1&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Link 2&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Link 3&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Link 4&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Link 5&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+      &#x3C;/ul&#x3E; </code></pre>
+            <pre><code class="language-javascript">const list = document.querySelector('.list')
+                const listItems = list.children
+                
+                console.log(listItems)
+    // Output: Check console.log </code></pre>
+    
+    <p><b>Selecting a specific child</b></p>
+    <p>You can select the nth item in the list from both NodeLists (result from querySelectorAll) and HTML Collections (result from children).</p>
+    <pre><code class="language-html">&#x3C;ul class=&#x22;list&#x22;&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Link 1&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Link 2&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Link 3&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Link 4&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;Link 5&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+      &#x3C;/ul&#x3E; </code></pre>
+
+      <pre><code class="language-javascript">const listItems = document.querySelectorAll('li')
+
+        const firstItem = listItems[0]
+        const secondItem = listItems[1]
+        const thirdItem = listItems[2]
+        const fourthItem = listItems[3]
+        const fifthItem = listItems[4]
+        
+        console.log(firstItem)
+        console.log(secondItem)
+        console.log(thirdItem)
+        console.log(fourthItem)
+        console.log(fifthItem)
+// Output: Check console.log </code></pre>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="../js/prism.js"></script>
+<script src="../js/traversingthedom.js"></script>
+</body>
+</html>
